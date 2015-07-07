@@ -13,7 +13,7 @@ gulp.task('templates', function () {
     .pipe($.handlebars())
     .pipe($.defineModule('plain'))
     .pipe($.declare({
-      namespace: 'oracle-schema-doc.templates'
+      namespace: 'oracleSchemaDoc.templates'
     }))
     .pipe(gulp.dest('.tmp/templates'));
 });
@@ -93,6 +93,11 @@ gulp.task('fonts', () => {
     .pipe(gulp.dest('dist/fonts'));
 });
 
+gulp.task('json', () => {
+  return gulp.src('app/json/*.json')
+  .pipe(gulp.dest('dist/json'));
+});
+
 gulp.task('extras', () => {
   return gulp.src([
     'app/*.*',
@@ -121,6 +126,7 @@ gulp.task('serve', ['styles', 'templates', 'fonts'], () => {
     'app/scripts/**/*.js',
     '.tmp/templates/**/*.js',,
     'app/images/**/*',
+    'app/json/**/*.json',
     '.tmp/fonts/**/*'
   ]).on('change', reload);
 
@@ -173,7 +179,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('build', ['lint', 'html', 'images', 'json', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
