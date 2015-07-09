@@ -1,13 +1,13 @@
-# oracle-schema-doc
+# Oracle Schema Documentation
 Automatic generation of HTML schema documentation using the Oracle data dictionary tables.
 
 ---
 
-UNFINISHED WORK IN PROGRESS
+**UNFINISHED WORK IN PROGRESS**
 
 ---
 
-# Usage
+## Usage
 
 Install the prerequisites.
 * Install [node](https://nodejs.org)
