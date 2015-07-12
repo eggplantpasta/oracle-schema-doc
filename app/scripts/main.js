@@ -7,8 +7,14 @@ Handlebars.registerHelper('headTitle', function(options) {
   return '';
 });
 
-// fetch the json data and apply it to the pre-compiled templates
+Handlebars.registerPartial('overview', oracleSchemaDoc.templates.overview);
+// fetch the json data and apply it to the pre-compiled template
 $.get('json/overview.json', function(data) {
-  var html = oracleSchemaDoc.templates.overview(data);
-  $('#overview').html(html);
+  var html = oracleSchemaDoc.templates.page(data);
+  $('#page').html(html);
 });
+// fetch the json data and apply it to the pre-compiled templates
+//$.get('json/overview.json', function(data) {
+//  var html = oracleSchemaDoc.templates.overview(data);
+//  $('#overview').html(html);
+//});
