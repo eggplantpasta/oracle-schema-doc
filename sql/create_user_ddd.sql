@@ -1,4 +1,4 @@
--- use if creating package and directory in a separate schema to the one being documented
+-- use if creating packages and directory in a separate schema to the one being documented
 -- modify as appropriate for your environment
 
 set define off;
